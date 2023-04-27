@@ -34,7 +34,7 @@ def twitterAPI(query, max_results, day_num):
     # Extract "data" value from dictionary
     tweets_data = tweets_dict['data'] 
     df = pd.json_normalize(tweets_data) 
-    if df:
+    if bool(df):
         df.to_csv('./data/twitter_{0}_{1}.csv'.format(query,datetime.now().strftime('%Y_%m_%d_%H_%M')), index=False, encoding='utf-8-sig')
     return tweets_data
 
