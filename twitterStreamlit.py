@@ -79,7 +79,8 @@ elif name == "Old Keyword":
 
     
     st.title("Dataframe list")
-    selected_option = st.radio('Select an option', csv_list)
+    keywordsList = os.listdir('./data')
+    selected_option = st.radio('Select an option', keywordsList)
     if selected_option:
         st.write(f"You selected {selected_option}")
         df = pd.read_csv(selected_option)
